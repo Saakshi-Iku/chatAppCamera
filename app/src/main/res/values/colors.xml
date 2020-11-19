@@ -2,5 +2,6 @@
 <resources>
     <color name="colorPrimary">#075E54</color>
     <color name="colorPrimaryDark">#128C7E</color>
+    <color name="colorRightChat">#DCF8C6</color>
     <color name="colorAccent">#ffffff</color>
 </resources>
