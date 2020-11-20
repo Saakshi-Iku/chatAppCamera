@@ -45,7 +45,6 @@ public class MessageActivity extends AppCompatActivity {
     EditText entered_message;
     ImageButton send_button;
     Intent intent;
-
     MessageAdapter messageAdapter;
     List<Chat>  mChat;
     RecyclerView recyclerView;

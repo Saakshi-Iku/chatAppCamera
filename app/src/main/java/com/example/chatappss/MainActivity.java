@@ -9,8 +9,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 
 import com.example.chatappss.Fragments.ChatsFragment;
+import com.example.chatappss.Fragments.ProfileFragment;
 import com.example.chatappss.Fragments.UsersFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPagerAdapter.addFragement(new ChatsFragment(),"Chats");
         viewPagerAdapter.addFragement(new UsersFragment(),"Users");
+        viewPagerAdapter.addFragement(new ProfileFragment(),"Profile");
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
