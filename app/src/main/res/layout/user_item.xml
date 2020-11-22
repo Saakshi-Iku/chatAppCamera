@@ -21,4 +21,22 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/user"/>
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+       android:layout_marginStart="40dp"
+        android:visibility="gone"
+        android:layout_marginTop="35dp"
+        android:id="@+id/img_on"
+        android:src="@mipmap/ic_launcher"
+        />
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="40dp"
+        android:visibility="gone"
+        android:layout_marginTop="35dp"
+        android:id="@+id/img_off"
+        android:background="#000000"
+        />
 </RelativeLayout>

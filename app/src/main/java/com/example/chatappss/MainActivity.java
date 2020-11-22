@@ -15,11 +15,18 @@ import com.example.chatappss.Fragments.ChatsFragment;
 import com.example.chatappss.Fragments.ProfileFragment;
 import com.example.chatappss.Fragments.UsersFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
+    DatabaseReference reference;
+    FirebaseUser firebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,16 +44,15 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter{
+    class ViewPagerAdapter extends FragmentPagerAdapter {
 
         private ArrayList<Fragment> fragments;
         private ArrayList<String> titles;
 
-        ViewPagerAdapter(FragmentManager fm)
-        {
+        ViewPagerAdapter(FragmentManager fm) {
             super(fm);
-            this.fragments=new ArrayList<>();
-            this.titles=new ArrayList<>();
+            this.fragments = new ArrayList<>();
+            this.titles = new ArrayList<>();
         }
 
         @NonNull
@@ -60,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             return fragments.size();
         }
 
-        public void addFragement(Fragment fragment,String title){
+        public void addFragement(Fragment fragment, String title) {
             fragments.add(fragment);
             titles.add(title);
         }
@@ -70,5 +76,24 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return titles.get(position);
         }
+    }
+    public void status(String status)
+    {
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        HashMap<String,Object> hashMap = new HashMap<>();
+        hashMap.put("status",status);
+        reference.updateChildren(hashMap);
+
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        status("online");
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        status("offline");
     }
 }
