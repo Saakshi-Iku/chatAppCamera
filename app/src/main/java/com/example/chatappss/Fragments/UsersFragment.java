@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +60,7 @@ public class UsersFragment extends Fragment {
                 mUsers.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User user = snapshot.getValue(User.class);
+                    Log.i("User Activity ",user.getUsername());
 //                   Toast.makeText(getContext(),user.getUsername().toString(),Toast.LENGTH_LONG).show();
                     if (!user.getId().equals(firebaseUser.getUid())) {
                         mUsers.add(user);

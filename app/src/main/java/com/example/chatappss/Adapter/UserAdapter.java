@@ -7,15 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.chatappss.Model.User;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.chatappss.MessageActivity;
+import com.example.chatappss.Model.User;
 import com.example.chatappss.R;
 
-import java.text.BreakIterator;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
