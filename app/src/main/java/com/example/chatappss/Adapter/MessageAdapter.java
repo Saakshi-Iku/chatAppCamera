@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.chatappss.MessageActivity;
 import com.example.chatappss.Model.Chat;
 import com.example.chatappss.R;
@@ -22,7 +23,7 @@ import java.util.List;
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder>{
 
     public static final int MSG_TYPE_LEFT=0;
-    public static final int MSG_TYPE_RIGHT=0;
+    public static final int MSG_TYPE_RIGHT=1;
     private Context mContext;
     private List<Chat> mChat;
     private String imageurl;
@@ -60,7 +61,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             holder.profile_image.setImageResource(R.drawable.user);
         }
         else{
-            //Glide.with(mContext).load(imageurl).into(holder.profile_image);
+            Glide.with(mContext).load(imageurl).into(holder.profile_image);
         }
     }
 

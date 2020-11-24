@@ -64,6 +64,7 @@ public class SignUp extends AppCompatActivity {
                                         hashMap.put("username",musername.getText().toString());
                                         hashMap.put("id",userid);
                                         hashMap.put("imageUrl","default");
+                                        hashMap.put("search",musername.toString());
                                         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {

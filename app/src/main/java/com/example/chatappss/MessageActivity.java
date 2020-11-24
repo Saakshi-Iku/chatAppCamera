@@ -148,15 +148,20 @@ public class MessageActivity extends AppCompatActivity {
                         Log.i("myid ",myid);
                         Log.i("userid",userid);
                         if((chat.getReceiver().trim().equals(myid) && chat.getSender().trim().equals(userid))||
-                                (chat.getReceiver().trim().equals(myid) && chat.getSender().trim().equals(userid)))
+                                (chat.getReceiver().trim().equals(userid) && chat.getSender().trim().equals(myid)))
                         {
                             mChat.add(chat);
                         }
 
-                        if((chat.getSender().trim()==myid.trim())||(chat.getSender().trim()==userid.trim()))
-                        {
-                            mChat.add(chat);
-                        }
+//                        if((chat.getSender().trim()==myid.trim())||(chat.getSender().trim()==userid.trim()))
+//                        {
+//                            mChat.add(chat);
+//                        }
+//
+//                        if((chat.getReceiver().trim()==myid.trim())||(chat.getReceiver().trim()==userid.trim()))
+//                        {
+//                            mChat.add(chat);
+//                        }
 
 
                         messageAdapter=new MessageAdapter(MessageActivity.this,mChat,imageurl);
