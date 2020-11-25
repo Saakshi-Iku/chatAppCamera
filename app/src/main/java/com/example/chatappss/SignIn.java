@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,6 +21,7 @@ public class SignIn extends AppCompatActivity {
     EditText memail,mpassword,musername;
     Button submit;
     FirebaseAuth firebaseAuth;
+    TextView forgot_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,13 @@ public class SignIn extends AppCompatActivity {
                                 // ...
                             }
                         });
+            }
+        });
+        forgot_password=findViewById(R.id.forgot_password);
+        forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignIn.this, ResetPasswordActivity.class));
             }
         });
 

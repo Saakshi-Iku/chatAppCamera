@@ -8,10 +8,11 @@
 
     <EditText
         android:id="@+id/email"
+        style="@style/Widget.AppCompat.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="email"
         android:inputType="textPersonName"
@@ -20,10 +21,11 @@
 
     <EditText
         android:id="@+id/password"
+        style="@style/Widget.AppCompat.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="234dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="220dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +35,23 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="75dp"
-        android:text="Button"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="132dp"
+        android:text="Sign in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="113dp"
+        android:text="forgot password??"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
