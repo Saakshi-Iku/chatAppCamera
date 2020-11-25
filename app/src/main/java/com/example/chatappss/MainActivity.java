@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         HashMap<String,Object> hashMap = new HashMap<>();
         hashMap.put("status",status);
         reference.updateChildren(hashMap);
-
     }
     @Override
     protected void onResume(){
