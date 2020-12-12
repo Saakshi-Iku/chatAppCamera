@@ -41,7 +41,8 @@ public class MessageActivity extends AppCompatActivity {
     DatabaseReference reference;
     EditText entered_message;
     ImageButton send_button;
-    Intent intent;
+    ImageButton camera_button;
+    Intent intent1;
     MessageAdapter messageAdapter;
     List<Chat>  mChat;
     RecyclerView recyclerView;
@@ -79,9 +80,9 @@ public class MessageActivity extends AppCompatActivity {
         //Text Box ( text entered by user )
         entered_message=findViewById(R.id.entered_message);
         send_button=findViewById(R.id.send_button);
-
-        intent=getIntent();
-        userid=intent.getStringExtra("userid");
+        camera_button=findViewById(R.id.camera_button);
+        intent1=getIntent();
+        userid=intent1.getStringExtra("userid");
         fuser= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("Users").child(userid);
 
@@ -98,6 +99,16 @@ public class MessageActivity extends AppCompatActivity {
                 entered_message.setText("");
             }
         });
+
+        camera_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(MessageActivity.this, CameraMainActivity.class);
+                startActivity(intent2);
+            }
+        });
+
+
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
